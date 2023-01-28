@@ -4,7 +4,7 @@
     "description": "This command-line application takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.",
     "main": "index.js",
     "scripts": {
-      "__test__": "jest"
+      "test": "jest"
     },
     "author": "Ezechukwu N.",
     "license": "ISC",

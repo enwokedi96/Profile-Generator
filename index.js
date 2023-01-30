@@ -100,25 +100,35 @@ const managerInfo={};
 const engineerInfo={};
 const internInfo ={};
 
-const logUserInputs = () => {
+const logUserInputs = async() => {
     console.log(`Program loaded!!\nPlease enter manager deets...`)
     // First phase of inquiry
-    inquirer.prompt(questions.manager).then((response)=>{
+    await inquirer.prompt(questions.manager).then((response)=>{
         console.log(response);
         userAnswers.push(response);
     })
 
     let currentUserOpt = ''
     while (true){
-        inquirer.prompt(questions.addPersonnel).then((response)=>{
-            currentUserOpt = response;
+        await inquirer.prompt(questions.addPersonnel).then((response)=>{
+            currentUserOpt = response.options;
         });
-        console.log('User has chose to: ',currentUserOpt);
+        console.log('\nUser has chose to: ',currentUserOpt);
         if (currentUserOpt.toLowerCase().includes('finish')){
-            console.log('Now ending choice loop...')
+            console.log('Now ending choice loop...');
+            break;
         }
         else if (currentUserOpt.toLowerCase().includes('intern')){
-            console.log('Now ending choice loop...')
+            console.log('\nPopulating new intern info...\n');
+            await inquirer.prompt(questions.intern).then((response)=>{
+                userAnswers.push(response);
+            });
+        }
+        else if (currentUserOpt.toLowerCase().includes('engineer')){
+            console.log('\nPopulating new engineer info...\n');
+            await inquirer.prompt(questions.engineer).then((response)=>{
+                userAnswers.push(response);
+            });
         }
     }
 }

@@ -8,19 +8,14 @@ This command-line application takes in information about employees on a software
 
 - [Description](#Description)
 
-- [Installation](#Installation)
-
 - [Requirements](#Requirements)
 
 - [Usage](#Usage)
 
 - [Tests](#Tests)
 
-### **Installation** 
 
-To install,  simply clone this git repo to local machine and run in your local coding environment.
-
-### **Requirements** 
+## **Requirements** 
 
 NPM and NodeJS>=16 are the basic requirement. Other necessary dependencies/libraries include;
 * jest >=29.4.0
@@ -30,7 +25,7 @@ To install these dependencies, simply run "npm i" or "npm install (dependency)" 
 Please do not change library versions unless familiar in the know.
 
 ## Usage
-Open terminal in dev environment and run "node index.js". This will immediately start up the code, prompting user to enter their manager first, and then any other team members in the team. The prompt will continue to ask if user needs an engineer or intern unless the third option is selected to finish. This then populates our pre-designed html and creates the file for you. 
+To install,  simply clone this git repo to local machine and run in your local coding environment. Open terminal in dev environment and run "node index.js". This will immediately start up the code, prompting user to enter their manager first, and then any other team members in the team. The prompt will continue to ask if user needs an engineer or intern unless the third option is selected to finish. This then populates our pre-designed html and creates the file for you. 
 
 Please find a full instructional video on how to create team below.
 

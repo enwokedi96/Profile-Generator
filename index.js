@@ -13,6 +13,7 @@ const render = require("./src/page-template.js");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 // array of questions for user
 let questions = {
+    // manager list of questions
     manager: [
         {
             type: 'input',
@@ -35,6 +36,7 @@ let questions = {
             name: 'officeNumber',
         },
     ],
+    // enginners list of questions
     engineer: [
         {
             type: 'input',
@@ -57,6 +59,7 @@ let questions = {
             name: 'github',
         },
     ],
+    // intern list of questions
     intern: [
         {
             type: 'input',
@@ -79,6 +82,7 @@ let questions = {
             name: 'school',
         },
     ],
+    // to add more staff or exit??
     addPersonnel: [
         {
             type: 'list',
@@ -99,7 +103,7 @@ const logUserInputs = async() => {
 
     console.log(`Program loaded!!\nPlease enter manager deets...`);
 
-    // First phase of inquiry
+    // First phase of inquiry: managers
     await inquirer.prompt(questions.manager).then((response)=>{
         console.log(response);
         userAnswers.push(new Manager(response.name, response.id, 
@@ -107,15 +111,21 @@ const logUserInputs = async() => {
     });
 
     let currentUserOpt = ''
+    // loop continously
     while (true){
+        // to add more staff or finish?
         await inquirer.prompt(questions.addPersonnel).then((response)=>{
             currentUserOpt = response.options;
         });
         console.log('\nUser has chose to: ',currentUserOpt);
+
+        // break loop if user does select finish
         if (currentUserOpt.toLowerCase().includes('finish')){
             console.log('Now ending choice loop...');
             break;
         }
+
+        // if intern, run an inquiry for intern and update answers
         else if (currentUserOpt.toLowerCase().includes('intern')){
             console.log('\nPopulating new intern info...');
             await inquirer.prompt(questions.intern).then((response)=>{
@@ -123,6 +133,8 @@ const logUserInputs = async() => {
                                             response.email, response.school));
             });
         }
+
+        // if engineer, run an inquiry for engineer and update answers
         else if (currentUserOpt.toLowerCase().includes('engineer')){
             console.log('\nPopulating new engineer info...');
             await inquirer.prompt(questions.engineer).then((response)=>{
@@ -131,12 +143,16 @@ const logUserInputs = async() => {
             });
         }
     }
+    // populate answers into intended divs and create html
     const html = render(userAnswers);
+
+    // write html to intended path
     fs.writeFile(outputPath, html, (err) =>
             err ? console.error(err) : console.log('All Done! Powered by Your Fav Uncle (Ruckus) Israel!')
             );
 }
 
+//  run
 logUserInputs();
 
 // 

@@ -132,7 +132,7 @@ const logUserInputs = async() => {
         }
     }
     const html = render(userAnswers);
-    fs.writeFile(outputPath + '.md', html, (err) =>
+    fs.writeFile(outputPath, html, (err) =>
             err ? console.error(err) : console.log('All Done! Powered by Your Fav Uncle (Ruckus) Israel!')
             );
 }

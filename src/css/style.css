@@ -1,5 +1,66 @@
+.team-heading{
+    color: aliceblue;
+    background-color: black;
+}
+
 .employee-card{
     margin-left: 10px;
-    background: linear-gradient(35deg, rgb(216, 164, 164), rgb(119, 119, 234));
     text-align: center;
 }
+
+.manager{
+    background: linear-gradient(35deg, gold, rgb(69, 69, 119)) !important;
+}
+
+.engineer{
+    background: linear-gradient(35deg, rgb(218, 71, 204), rgb(119, 119, 234)) !important;
+}
+
+.intern{
+    background: linear-gradient(35deg, rgb(193, 97, 41), rgb(119, 119, 234)) !important;
+}
+
+.bg-shape-1 {
+    position: absolute;
+    background: pink;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-top: 75px;
+    margin-left: 25px;
+  }
+
+.bg-shape-2 {
+    position: absolute;
+    background: rgb(207, 123, 123);
+    margin-left: 275px;
+    margin-top: 325px;
+    height: 250px;
+    width: 250px;
+    border-radius: 20%;
+    transform: rotate(45deg);
+  }
+
+.bg-shape-3 {
+    position: absolute;
+    overflow: hidden;
+    background: rgb(100, 165, 147);
+    margin-top: 75px;
+    margin-left: 525px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    
+    transform: rotate(45deg);
+  }
+
+.bg-shape-4 {
+    position: absolute;
+    background: pink;
+    margin-left: 850px;
+    margin-top: 250px;
+    height: 250px;
+    width: 250px;
+    border-radius: 20%;
+    transform: rotate(45deg);
+  }

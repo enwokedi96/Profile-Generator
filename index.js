@@ -131,14 +131,12 @@ const logUserInputs = async() => {
             });
         }
     }
-    // console.log(userAnswers);
+    const html = render(userAnswers);
+    fs.writeFile(outputPath + '.md', html, (err) =>
+            err ? console.error(err) : console.log('All Done! Powered by Your Fav Uncle (Ruckus) Israel!')
+            );
 }
 
 logUserInputs();
 
-const html = render(userAnswers);
-
-fs.writeFile(outputPath + '.md', html, (err) =>
-            err ? console.error(err) : 
-            console.log('All Done! Powered by Your Fav Uncle (Ruckus) Israel!')
-            );
+// 

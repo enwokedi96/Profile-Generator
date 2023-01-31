@@ -42,4 +42,4 @@ The final html page of this sample implementation is also shown below.
 
 ## Tests
 To run tests, simply enter "npm test" in the command line. All tests are confirmed to be fully functional and pass. Images for test in progresss and completed tests are shown below
-<img src="images\tests-in-progress.PNG"> <img src="images\tests-complete.PNG">
+<img src="images\tests-in-progress.PNG" style="width:50%"> <img src="images\tests-complete.PNG" style="width:50%">

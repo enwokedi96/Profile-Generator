@@ -1,0 +1,5 @@
+.employee-card{
+    margin-left: 10px;
+    background: linear-gradient(35deg, rgb(216, 164, 164), rgb(119, 119, 234));
+    text-align: center;
+}

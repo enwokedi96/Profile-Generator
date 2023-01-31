@@ -41,5 +41,6 @@ The final html page of this sample implementation is also shown below.
 <img src="images\127.0.0.1_5500_output_team.html.png" alt="html-image" style="width:50%">
 
 ## Tests
-To run tests, simply enter "npm test" in the command line. All tests are confirmed to be fully functional and pass. Images for test in progresss and completed tests are shown below
-<img src="images\tests-in-progress.PNG" alt="test-progressing" width=150> <img src="images\tests-complete.PNG" alt="test-results" width=150>
+To run tests, simply enter "npm test" in the command line. All tests are confirmed to be fully functional and pass. Images for test in progresss and completed tests are shown below:
+
+<img src="images\tests-in-progress.PNG" alt="test-progressing" width=250> <img src="images\tests-complete.PNG" alt="test-results" width=250>

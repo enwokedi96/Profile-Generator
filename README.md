@@ -25,6 +25,7 @@ To install,  simply clone this git repo to local machine and run in your local c
 NPM and NodeJS>=16 are the basic requirement. Other necessary dependencies/libraries include;
 * jest >=29.4.0
 * inquirer >=6.3.1
+
 To install these dependencies, simply run "npm i" or "npm install (dependency)" depending on your local version of NodeJS.
 Please do not change library versions unless familiar in the know.
 
@@ -41,4 +42,4 @@ The final html page of this sample implementation is also shown below.
 
 ## Tests
 To run tests, simply enter "npm test" in the command line. All tests are confirmed to be fully functional and pass. Images for test in progresss and completed tests are shown below
-[testInProgress](images\tests-in-progress.PNG) [testComplete](images\tests-complete.PNG) 
+<img src="images\tests-in-progress.PNG"> <img src="images\tests-complete.PNG">

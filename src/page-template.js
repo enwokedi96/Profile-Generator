@@ -58,30 +58,31 @@ const generateTeam = team => {
         `;
     };
 
-    const html = [];
+    const htmlM = [];
+    const htmlO = [];
 
-    html.push(team
+    htmlM.push(team
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
     );
-    html.push(team
+    htmlO.push(team
         .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
     );
-    html.push(team
+    htmlO.push(team
         .filter(employee => employee.getRole() === "Intern")
         .map(intern => generateIntern(intern))
         .join("")
     );
 
-    return html.join("");
+    return [htmlM, htmlO.join("")];
 
 }
 
 // exports function to generate entire page
 module.exports = team => {
-
+    const [manager, others] = generateTeam(team)
     return `
     <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +109,12 @@ module.exports = team => {
     <div class="container">
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
-                ${generateTeam(team)}
+                ${manager}
+            </div>
+        </div>
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                ${others}
             </div>
         </div>
     </div>

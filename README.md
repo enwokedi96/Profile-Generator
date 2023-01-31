@@ -38,7 +38,7 @@ Please find a full instructional video on how to create team below.
 
 The final html page of this sample implementation is also shown below.
 
-<img src="images\127.0.0.1_5500_output_team.html.PNG" alt="html-image">
+<img src="images\output_team.html.png" alt="html-image">
 
 ## Tests
 To run tests, simply enter "npm test" in the command line. All tests are confirmed to be fully functional and pass. Images for test in progresss and completed tests are shown below:

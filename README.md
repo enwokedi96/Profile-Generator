@@ -1,2 +1,36 @@
 # Profile-Generator
-This command-line application takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+
+## Description
+This command-line application takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Full details on operation and installation can be found in the sections below.
+
+
+## **Table of Content**
+
+- [Description](#Description)
+
+- [Installation](#Installation)
+
+- [Requirements](#Requirements)
+
+- [Usage](#Usage)
+
+### **Installation** 
+
+To install,  simply clone this git repo to local machine and run in your local coding environment.
+
+### **Requirements** 
+
+NPM and NodeJS>=16 are the basic requirement. Other necessary dependencies/libraries include;
+* jest >=29.4.0
+* inquirer >=6.3.1
+To install these dependencies, simply run "npm i" or "npm install (dependency)" depending on your local version of NodeJS.
+Please do not change library versions unless familiar in the know.
+
+## Usage
+Open terminal in dev environment and run "node index.js". This will immediately start up the code, prompting user to enter their manager first, and then any other team members in the team. The prompt will continue to ask if user needs an engineer or intern unless the third option is selected to finish. This then populates our pre-designed html and creates the file for you. 
+
+Please find a full instructional video on how to create team below.
+
+[team-generator-workflow.webm](https://user-images.githubusercontent.com/116044356/215649940-2bf0bd5c-e80a-4847-97ca-b6e5bd020898.webm)
+
+

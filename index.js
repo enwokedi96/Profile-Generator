@@ -10,9 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
-
 // array of questions for user
 let questions = {
     manager: [
@@ -37,7 +35,7 @@ let questions = {
             name: 'officeNumber',
         },
     ],
-    engineer:[
+    engineer: [
         {
             type: 'input',
             message: "Enter engineer's name...",
@@ -81,10 +79,10 @@ let questions = {
             name: 'school',
         },
     ],
-    addPersonnel:[
+    addPersonnel: [
         {
             type: 'list',
-            message: "Wanna add an extra team member? (if not, click 'Finish building team')",
+            message: "\nWanna add an extra team member? (if not, click 'Finish building team')",
             name: 'options',
             choices: ["Add an engineer", "Add an intern", "Finish building team"]
         }
@@ -96,17 +94,17 @@ let userAnswers = [];
 
 // this function expression gives the user the option of choosing which
 // optional sections to add to the file
-const managerInfo={};
-const engineerInfo={};
-const internInfo ={};
 
 const logUserInputs = async() => {
-    console.log(`Program loaded!!\nPlease enter manager deets...`)
+
+    console.log(`Program loaded!!\nPlease enter manager deets...`);
+
     // First phase of inquiry
     await inquirer.prompt(questions.manager).then((response)=>{
         console.log(response);
-        userAnswers.push(response);
-    })
+        userAnswers.push(new Manager(response.name, response.id, 
+                                    response.email, response.officeNumber));
+    });
 
     let currentUserOpt = ''
     while (true){
@@ -119,18 +117,28 @@ const logUserInputs = async() => {
             break;
         }
         else if (currentUserOpt.toLowerCase().includes('intern')){
-            console.log('\nPopulating new intern info...\n');
+            console.log('\nPopulating new intern info...');
             await inquirer.prompt(questions.intern).then((response)=>{
-                userAnswers.push(response);
+                userAnswers.push(new Intern(response.name, response.id, 
+                                            response.email, response.school));
             });
         }
         else if (currentUserOpt.toLowerCase().includes('engineer')){
-            console.log('\nPopulating new engineer info...\n');
+            console.log('\nPopulating new engineer info...');
             await inquirer.prompt(questions.engineer).then((response)=>{
-                userAnswers.push(response);
+                userAnswers.push(new Engineer(response.name, response.id, 
+                                            response.email, response.github));
             });
         }
     }
+    // console.log(userAnswers);
 }
 
 logUserInputs();
+
+const html = render(userAnswers);
+
+fs.writeFile(outputPath + '.md', html, (err) =>
+            err ? console.error(err) : 
+            console.log('All Done! Powered by Your Fav Uncle (Ruckus) Israel!')
+            );

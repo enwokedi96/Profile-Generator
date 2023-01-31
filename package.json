@@ -1,5 +1,5 @@
 {
-    "name": "01-Stu-tdd-dissect",
+    "name": "profile-generator",
     "version": "1.0.0",
     "description": "This command-line application takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.",
     "main": "index.js",
